@@ -270,3 +270,14 @@ footer {
 .logo img{
     width: 50px;
 }
+
+@media (max-width: 670px) {
+    .product-grid {
+        display: flex;
+        flex-direction: column; /* Se asegurará de que los elementos estén en columna en pantallas pequeñas */
+        flex-wrap: wrap;
+        align-items: center; /* Centra los productos */
+        width: 100%; /* Ajusta el ancho a 100% para pantallas pequeñas */
+        margin-top: 15px; /* Ajusta la separación superior */
+    }
+}

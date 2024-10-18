@@ -1,0 +1,272 @@
+/* Colores basados en la paleta */
+:root {
+    --dark-blue: #00040d;
+    --mid-blue: #384b7a;
+    --vibrant-blue: #5367e1;
+    --light-blue: #68a1e1;
+    --white-blue: #eff7fe;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--white-blue);
+}
+
+/* Encabezado */
+header {
+    background-color: var(--dark-blue);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    color: white;
+    font-size: 25px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--white-blue);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--vibrant-blue);
+}
+
+/* Buscador con animación */
+.search-section {
+    position: relative;
+    height: 60vh;
+    background-color: var(--mid-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.animated-title h1 {
+    font-size: 3rem;
+    color: white;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Efecto de animación al título */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px var(--dark-blue), 0 0 20px var(--dark-blue), 0 0 30px var(--dark-blue);
+    }
+    100% {
+        text-shadow: 0 0 20px var(--vibrant-blue), 0 0 30px var(--vibrant-blue), 0 0 40px var(--light-blue);
+    }
+}
+
+/* Buscador */
+.search-section {
+    position: relative;
+    height: 60vh;
+    background-image: url('fondoBusqueda.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;  /* Hace que la imagen cubra toda la sección */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-box button {
+    padding: 0.5rem 1rem;
+    background-color: var(--vibrant-blue);
+    border: none;
+    border-radius: 5px;
+    color: var(--white-blue);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: var(--light-blue);
+}
+/* Partículas */
+.particle {
+    position: absolute;
+    bottom: 10px; /* Partículas comienzan justo antes del pie de página */
+    width: 3px; /* Tamaño de las partículas */
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: move 8s linear infinite;
+}
+
+/* Anima las partículas */
+@keyframes move {
+    0% {
+        transform: translateY(50vh) scale(0.5); /* Comienzan desde el centro visible */
+    }
+    100% {
+        transform: translateY(-50vh) scale(1.2); /* Se elevan hasta la mitad */
+    }
+}
+
+/* Productos */
+.products-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* gap: 2rem; */
+    /* margin-top: 2rem; */
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+.product-slider {
+    position: relative;
+    width: 240px; /* Ajusta según tus necesidades */
+    height: 210px; /* Ajusta según tus necesidades */
+    overflow: hidden;
+    margin: auto;
+}
+
+.product-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.product-slider .slide.active {
+    opacity: 1;
+}
+.product-card {
+    background-color: var(--dark-blue);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 50%;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    color: var(--light-blue);
+    margin: 1rem 0 0.5rem;
+}
+
+.product-card p {
+    color: var(--white-blue);
+}
+
+.product-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    color: var(--white-blue);
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-whatsapp {
+    background-color: var(--vibrant-blue);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--light-blue);
+}
+
+.btn-instagram {
+    background-color: #E4405F; /* Color característico de Instagram */
+}
+
+.btn-instagram:hover {
+    background-color: #FF6B92;
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--dark-blue);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: var(--light-blue);
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.logo img{
+    width: 50px;
+}
